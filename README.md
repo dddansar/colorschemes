@@ -1,4 +1,4 @@
-# colorschemes
+# Colorschemes
 A list of colorschemes that I made
 
 ## ddd_black

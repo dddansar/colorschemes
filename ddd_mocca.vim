@@ -197,8 +197,8 @@ hi TitleBar          cterm=bold gui=bold ctermfg=232  guifg=grey1       ctermbg=
 hi EndOfBuffer       cterm=NONE gui=NONE ctermfg=233  guifg=grey5       ctermbg=228  guibg=khaki      guisp=NONE
 hi LineNr            cterm=bold gui=bold ctermfg=236  guifg=grey30      ctermbg=NONE guibg=NONE       guisp=NONE
 
-hi Statement         cterm=bold gui=bold ctermfg=129  guifg=purple      ctermbg=NONE guibg=NONE       guisp=NONE
-hi Keyword           cterm=bold gui=bold ctermfg=129  guifg=purple      ctermbg=NONE guibg=NONE       guisp=NONE
+hi Statement         cterm=bold gui=bold ctermfg=129  guifg=purple1     ctermbg=NONE guibg=NONE       guisp=NONE
+hi Keyword           cterm=bold gui=bold ctermfg=129  guifg=purple1     ctermbg=NONE guibg=NONE       guisp=NONE
 hi Type              cterm=bold gui=bold ctermfg=40   guifg=green3      ctermbg=NONE guibg=NONE       guisp=NONE
 hi Identifier        cterm=bold gui=bold ctermfg=40   guifg=green3      ctermbg=NONE guibg=NONE       guisp=NONE
 hi Character         cterm=bold gui=bold ctermfg=34   guifg=green4      ctermbg=NONE guibg=NONE       guisp=NONE
@@ -214,14 +214,14 @@ hi Boolean           cterm=bold gui=bold ctermfg=45   guifg=cyan3       ctermbg=
 hi Debug             cterm=bold gui=bold ctermfg=30   guifg=teal        ctermbg=NONE guibg=NONE       guisp=NONE
 
 hi Special           cterm=bold gui=bold ctermfg=33   guifg=dodgerblue  ctermbg=NONE guibg=NONE       guisp=NONE
-hi SpecialChar       cterm=NONE gui=NONE ctermfg=129  guifg=purple      ctermbg=NONE guibg=NONE       guisp=NONE
+hi SpecialChar       cterm=NONE gui=NONE ctermfg=129  guifg=purple1     ctermbg=NONE guibg=NONE       guisp=NONE
 hi Delimiter         cterm=bold gui=bold ctermfg=208  guifg=darkorange  ctermbg=NONE guibg=NONE       guisp=NONE
 
 hi Exception         cterm=NONE gui=NONE ctermfg=196  guifg=red2        ctermbg=NONE guibg=NONE       guisp=NONE
 hi NonText           cterm=bold gui=bold ctermfg=196  guifg=red2        ctermbg=NONE guibg=NONE       guisp=NONE
 hi Question          cterm=bold gui=bold ctermfg=205  guifg=hotpink     ctermbg=NONE guibg=NONE       guisp=NONE
 hi Comment           cterm=bold gui=bold ctermfg=17   guifg=navy        ctermbg=NONE guibg=NONE       guisp=NONE
-hi SpecialComment    cterm=NONE gui=NONE ctermfg=129  guifg=purple      ctermbg=NONE guibg=NONE       guisp=NONE
+hi SpecialComment    cterm=NONE gui=NONE ctermfg=129  guifg=purple1     ctermbg=NONE guibg=NONE       guisp=NONE
 
 hi StorageClass      cterm=bold gui=bold ctermfg=178  guifg=orange      ctermbg=NONE guibg=NONE       guisp=NONE
 hi Function          cterm=bold gui=bold ctermfg=208  guifg=darkorange  ctermbg=NONE guibg=NONE       guisp=NONE
@@ -253,10 +253,10 @@ hi IncSearch         cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=
 hi Pmenu             cterm=NONE gui=NONE ctermfg=15   guifg=white       ctermbg=234  guibg=grey10     guisp=NONE
 hi PmenuSel          cterm=NONE gui=NONE ctermfg=15   guifg=white       ctermbg=235  guibg=grey20     guisp=NONE
 hi PmenuSbar         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=15   guibg=white      guisp=NONE
-hi PmenuThumb        cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=46   guibg=#00FF00    guisp=NONE
+hi PmenuThumb        cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=46   guibg=green1     guisp=NONE
 
 hi MatchParen        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=30   guibg=teal       guisp=NONE
-hi Note              cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=46   guibg=#00FF00    guisp=NONE
+hi Note              cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=46   guibg=green1     guisp=NONE
 hi Todo              cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=214  guibg=orange     guisp=NONE
 hi Error             cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=red  guibg=red2       guisp=NONE
 hi ErrorMsg          cterm=bold gui=bold ctermfg=15   guifg=white       ctermbg=red  guibg=red2       guisp=NONE

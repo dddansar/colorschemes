@@ -2,7 +2,9 @@
 " File: all_colors.vim
 "------------------------------------------------------------------------------
 " Description: Contains all the colors available in Vim.
-" NOTE: See also custom_colorscheme.vim. and colors.vim.
+" NOTE: For the main colorschemes, see also ddd_*.vim.
+" NOTE: To view all the colors in this file, it needs to source itself.
+"       :so .vim/colors/all_colors.vim
 "------------------------------------------------------------------------------
 " Authors: Danny Sarraf
 "------------------------------------------------------------------------------

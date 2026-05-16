@@ -38,7 +38,7 @@
 if exists("b:all_colors_loaded")
   finish
 endif
-let g:all_colors_loaded = 1
+let b:all_colors_loaded = 1
 
 " Clear all syntax match groups from every other file to improve performance.
 " This file uses it's own syntax matching.

@@ -34,7 +34,7 @@
 "==============================================================================
 
 " Exit if the file was already loaded
-if exists("b:highlightings_loaded")
+if exists("g:highlightings_loaded")
   finish
 endif
 let g:highlightings_loaded = 1

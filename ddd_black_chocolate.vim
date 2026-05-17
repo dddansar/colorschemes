@@ -34,10 +34,7 @@
 "==============================================================================
 
 " Exit if the file was already loaded
-if exists("g:highlightings_loaded")
-  finish
-endif
-let g:highlightings_loaded = 1
+hi clear
 let g:colors_name = 'ddd_black_chocolate'
 
 " NOTE: If you change the colors here, you change them in all files for all
@@ -242,11 +239,11 @@ hi CursorLine        cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=
 hi CursorLineNr      cterm=bold gui=bold ctermfg=130  guifg=sienna      ctermbg=NONE guibg=NONE       guisp=NONE
 hi ColorColumn       cterm=NONE gui=NONE ctermfg=236  guifg=grey30      ctermbg=234  guibg=grey10     guisp=NONE
 
-hi StatusLine        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=130  guibg=sienna     guisp=NONE
+hi StatusLine        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=130  guibg=chocolate  guisp=NONE
 hi StatusLineNC      cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=52   guibg=chocolate4 guisp=NONE
 hi VertSplit         cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=52   guibg=chocolate4 guisp=NONE
 
-hi Search            cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=130  guibg=sienna     guisp=NONE
+hi Search            cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=130  guibg=chocolate  guisp=NONE
 hi CurSearch         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=52   guibg=chocolate4 guisp=NONE
 hi IncSearch         cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=52   guibg=chocolate4 guisp=NONE
 

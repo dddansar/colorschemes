@@ -34,10 +34,7 @@
 "==============================================================================
 
 " Exit if the file was already loaded
-if exists("g:highlightings_loaded")
-  finish
-endif
-let g:highlightings_loaded = 1
+hi clear
 let g:colors_name = 'ddd_white'
 
 " NOTE: If you change the colors here, you change them in all files for all
@@ -182,7 +179,7 @@ let g:colors_name = 'ddd_white'
 "------------------------------------------------------------------------------
 
 " May be needed just in case something goes wrong
-set background=dark
+set background=light
 
 " NOTE: You can find a list of vim's colorschemes in $VIMRUNTIME/colors/
 " Vim default groups

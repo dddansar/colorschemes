@@ -1,6 +1,32 @@
 # Colorschemes
 A list of colorschemes that I made
 
+To use, add the colorschemes to .vim/colors/ for Vim or .config/nvim/colors/ for Neovim
+
+Then load the desired colorscheme with:
+
+For Vim:
+
+```Vim
+colorscheme ddd_black
+" ... Any of the other colorschemes can be loaded instead...
+" colorscheme ddd_darkgrey
+" ...
+```
+
+For NeoVim:
+
+```Lua
+vim.cmd.colorscheme("ddd_black")
+" vim.cmd("colorscheme ddd_black") " Also works
+" vim.cmd[[colorscheme ddd_black]] " Also works
+" ... Any of the other colorschemes can be loaded instead...
+" vim.cmd.colorscheme("ddd_darkgrey")
+" ...
+```
+
+# Colorscheme Images
+
 ## ddd_black
 ![ddd_black](https://raw.githubusercontent.com/dddansar/vimrc/assets/ddd_black.png)
 

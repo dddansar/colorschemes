@@ -34,10 +34,7 @@
 "==============================================================================
 
 " Exit if the file was already loaded
-if exists("g:highlightings_loaded")
-  finish
-endif
-let g:highlightings_loaded = 1
+hi clear
 let g:colors_name = 'ddd_black_navy'
 
 " NOTE: If you change the colors here, you change them in all files for all

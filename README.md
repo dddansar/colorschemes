@@ -7,7 +7,7 @@ Then load the desired colorscheme with:
 
 For Vim:
 
-```Vim
+```vim
 colorscheme ddd_black
 " ... Any of the other colorschemes can be loaded instead...
 " colorscheme ddd_darkgrey
@@ -16,7 +16,7 @@ colorscheme ddd_black
 
 For NeoVim:
 
-```Lua
+```lua
 vim.cmd.colorscheme("ddd_black")
 " vim.cmd("colorscheme ddd_black") " Also works
 " vim.cmd[[colorscheme ddd_black]] " Also works

@@ -4421,7 +4421,6 @@ syn keyword   HLCterm252           HLCterm252
 syn keyword   HLCterm253           HLCterm253
 syn keyword   HLCterm254           HLCterm254
 syn keyword   HLCterm255           HLCterm255
-syn keyword   HLCterm256           HLCterm256
 "------------------------------------------------------------------------------
 
 
@@ -7420,8 +7419,19 @@ hi default HLCterm252         cterm=bold ctermfg=252
 hi default HLCterm253         cterm=bold ctermfg=253
 hi default HLCterm254         cterm=bold ctermfg=254
 hi default HLCterm255         cterm=bold ctermfg=255
-hi default HLCterm256         cterm=bold ctermfg=256
 "------------------------------------------------------------------------------
+
+" grey0    16
+" grey10   234
+" grey20   236
+" grey30   238
+" grey40   240
+" grey50   243
+" grey60   246
+" grey70   248
+" grey80   250
+" grey90   252
+" grey100  231
 
 " Other syntax matchings were cleared to improve this file's performance
 " So recreating basic matchings just for this file.
@@ -7442,6 +7452,6 @@ syn match   AllColorsMatch4   '\<cterm\%(\|fg\|bg\)\>'
 hi  link    AllColorsMatch5   Conditional
 syn match   AllColorsMatch5   '\<\%(if\|endif\)\>'
 
-hi  link    AllColorsHLNote   Note
+hi  link    AllColorsHLNote   HLGreen3BgB
 syn match   AllColorsHLNote   "\<NOTE\%(:\|\>\)\@=" contained containedin=AllColorsMatch3
 

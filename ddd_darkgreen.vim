@@ -276,12 +276,12 @@ hi Search            cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=
 hi CurSearch         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=34   guibg=green3     guisp=NONE
 hi IncSearch         cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=34   guibg=green3     guisp=NONE
 
-hi Pmenu             cterm=NONE gui=NONE ctermfg=231  guifg=white       ctermbg=234  guibg=grey10     guisp=NONE
-hi PmenuSel          cterm=NONE gui=NONE ctermfg=231  guifg=white       ctermbg=236  guibg=grey20     guisp=NONE
-hi PmenuSbar         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=231  guibg=white      guisp=NONE
+hi Pmenu             cterm=NONE gui=NONE ctermfg=94   guifg=tan3        ctermbg=64   guibg=darkgreen  guisp=NONE
+hi PmenuSel          cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=34   guibg=green3     guisp=NONE
+hi PmenuSbar         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=94   guibg=tan3       guisp=NONE
 hi PmenuThumb        cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=46   guibg=green1     guisp=NONE
-hi PmenuMatch    cterm=underline gui=underline ctermfg=231 guifg=white  ctermbg=234  guibg=grey10     guisp=NONE
-hi PmenuMatchSel cterm=underline gui=underline ctermfg=184 guifg=yellow ctermbg=236  guibg=grey20     guisp=NONE
+hi PmenuMatch    cterm=underline gui=underline ctermfg=94  guifg=tan3   ctermbg=64   guibg=darkgreen  guisp=NONE
+hi PmenuMatchSel cterm=underline gui=underline ctermfg=16  guifg=black  ctermbg=34   guibg=green3     guisp=NONE
 
 hi MatchParen        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=30   guibg=teal       guisp=NONE
 hi Todo              cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=214  guibg=orange     guisp=NONE

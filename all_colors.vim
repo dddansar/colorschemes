@@ -4,7 +4,7 @@
 " Description: Contains all the colors available in Vim.
 " NOTE: For the main colorschemes, see also ddd_*.vim.
 " NOTE: To view all the colors in this file, it needs to source itself.
-"       :so .vim/colors/all_colors.vim
+"       :so $vim_folder_path/colors/all_colors.vim
 "------------------------------------------------------------------------------
 " Authors: Danny Sarraf
 "------------------------------------------------------------------------------
@@ -7445,7 +7445,7 @@ syn match   AllColorsMatch2   '\<\%(match\|keyword\|default\|link\|bold\|underli
 hi  link    AllColorsMatch3   Comment
 syn match   AllColorsMatch3   "^ *\".*"
 
-hi  link    AllColorsMatch4   Function
+hi  link    AllColorsMatch4   PreProc
 syn match   AllColorsMatch4   '\<gui\%(\|fg\|bg\)\>'
 syn match   AllColorsMatch4   '\<cterm\%(\|fg\|bg\)\>'
 

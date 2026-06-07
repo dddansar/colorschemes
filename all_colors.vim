@@ -33,11 +33,6 @@
 " SOFTWARE.
 "==============================================================================
 
-
-" Exit if the file was already loaded
-if exists("b:all_colors_loaded")
-  finish
-endif
 let b:all_colors_loaded = 1
 
 " Clear all syntax match groups from every other file to improve performance.

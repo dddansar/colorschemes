@@ -1,5 +1,5 @@
-# Colorschemes
-A list of colorschemes that I made
+# Vim Colorschemes
+A list of Vim colorschemes that I made
 
 To use, add the colorschemes to .vim/colors/ for Vim or .config/nvim/colors/ for Neovim
 

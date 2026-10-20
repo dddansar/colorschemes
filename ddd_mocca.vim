@@ -2,7 +2,7 @@
 " File: ddd_mocca.vim
 "------------------------------------------------------------------------------
 " Description: Creates a new colorscheme called ddd_mocca. This file
-"              edits the colors of the built-in vim highlighting groups. Gets
+"              edits the colors of the built-in vim highlight groups. Gets
 "              loaded by vim if the colorscheme is set to ddd_mocca.
 " NOTE: See also more_colors.vim.
 "------------------------------------------------------------------------------
@@ -33,8 +33,10 @@
 " SOFTWARE.
 "==============================================================================
 
-" Exit if the file was already loaded
+" Clear any previous highlight so that if you switch colorschemes mid-session, old highlight definitions from the previous colorscheme won't bleed through, causing inconsistent colors.
 hi clear
+
+" Set the colorscheme name, so that you can load the colorscheme.
 let g:colors_name = 'ddd_mocca'
 
 " NOTE: If you change the colors here, you change them in all files for all
@@ -54,7 +56,7 @@ let g:colors_name = 'ddd_mocca'
 "
 " 2. Syntax Groups
 "
-" Statement: General programming statements (return, break, etc.)
+" Statement: General programming statements
 " Keyword: Other language keywords
 " Type: Type names (int, char, etc.)
 " Identifier: Variable and function names. myVariable, upvars, &t_EI
@@ -70,21 +72,21 @@ let g:colors_name = 'ddd_mocca'
 " Boolean: Boolean literals (true, false)
 "
 " SpecialChar: Special characters within strings (\n, \t, %d) \%( \)
-" Delimiter: Delimiters like brackets, braces, parentheses, commas, colons
+" Delimiter: Delimiters like brackets, parentheses, commas, colons
 " SpecialKey: Unprintable characters shown as special symbols (e.g. )
 " Special: Special symbols and characters that don't fit elsewhere.
 "
 " Exception: Exception keywords (try, catch, throw)
 " NonText: Non text characters like @ in wrap and EOL $ (:set list)
-" Comment: Comments
+" Comment: Comments in programming languages.
 " SpecialComment: Special comments (e.g. java /** @brief */ comments)
 " Debug: Things like assert(), and print statements used for debug.
 "
-" StorageClass: Storage class keywords (static, register, volatile, extern)
-" Function: A sub-group of Identifier specifically for function/method names.
+" StorageClass: Storage classes (static, register, volatile, extern)
+" Function: A sub-group of Identifier specifically for functions/methods.
 " Operator: Operators (+, -, *, /, etc.)
 "
-" Macro: A sub-group of PreProc for macro definitions and macro names. Example:
+" Macro: A sub-group of PreProc for macro definitions and macro names.
 "        #define MY_MACRO 123   #undef ABC
 " Define: #define directives
 " PreCondit: Preprocessor conditionals (#ifdef, #endif, etc.)
@@ -99,6 +101,12 @@ let g:colors_name = 'ddd_mocca'
 "
 " Todo: TODO/FIXME/XXX comment keywords
 " Error: Syntax and other errors
+"
+" SpellBad: Spell check: word not recognized (:set spell)
+" SpellCap: Spell check: word should be capitalized (:set spellcapcheck&)
+" SpellLocal: Spell check: word recognized in another region
+"             flavour  " British spelling (:set spelllang=en_us)
+" SpellRare: Spell check: word rarely used (:spellrare wordlying)
 "
 " 3. Misc
 "
@@ -123,7 +131,7 @@ let g:colors_name = 'ddd_mocca'
 " Title: Titles in output (:set all  or  :autocmd  or  :messages)
 " MoreMsg: More-prompt (:set all)
 " Question: Prompt for user input (:!ls  or  :hi Special  or  :messages)
-" ErrorMsg: Error messages in the command area (:do this)
+" ErrorMsg: Error messages in the command area (:abc this)
 " WarningMsg: Warning messages (when search wraps)
 " ModeMsg: The text Vim shows at the bottom left when you enter a mode.
 "          Example  -- INSERT --   -- VISUAL --   -- REPLACE --
@@ -135,28 +143,20 @@ let g:colors_name = 'ddd_mocca'
 " PopupNotification: Floating popup notifications
 "                    (:call popup_notification('Hello World!', #{time: 3000}))
 "
-" 6. Spelling
-"
-" SpellBad: Spell check: word not recognized (:set spell)
-" SpellCap: Spell check: word should be capitalized (:set spellcapcheck&)
-" SpellLocal: Spell check: word recognized in another region
-"             flavour  " British spelling (set spelllang=en_us)
-" SpellRare: Spell check: word rarely used (:spellrare wordlying)
-"
-" 7. Diff
+" 6. Diff
 "
 " DiffAdd: Added lines in diff mode (gvimdiff file1 file2)
 " DiffChange: Changed lines in diff mode
 " DiffDelete: Deleted lines in diff mode
 " DiffText: Changed text within a changed line in diff mode
 "
-" 8. Fold
+" 7. Fold
 "
 " Folded: Closed fold lines (fold zm | unfold zr)
 " FoldColumn: Fold indicator column (:set foldcolumn=1)
 " SignColumn: Column used for signs/diagnostics (:set signcolumn=yes)
 "
-" 9. Cursor & Position
+" 8. Cursor & Position
 "
 " Cursor: The cursor where text is typed
 " CursorIM: The cursor highlight when an Input Method Editor (IME) is active.
@@ -170,7 +170,7 @@ let g:colors_name = 'ddd_mocca'
 " CursorLineFold: Fold indicator on the cursor line (:set foldcolumn=1)
 " CursorLineSign: Sign column on the cursor line (:set signcolumn=yes)
 "
-" 10. Popup menu
+" 9. Popup menu
 "
 " Pmenu: Popup menu (autocomplete, etc.) (<c-n> in insert mode)
 " PmenuSel: Selected item in the popup menu (try <c-n> on in)
@@ -178,8 +178,12 @@ let g:colors_name = 'ddd_mocca'
 " PmenuThumb: Scrollbar thumb in the popup menu
 " PmenuMatch: Matching characters in popup menu items
 " PmenuMatchSel: Matching characters in the selected popup menu item
+" PmenuKind: Popup menu item "kind" (added in Vim 9.1+) (use c-x c-o)
+" PmenuKindSel: Popup menu item "kind" selected (added in Vim 9.1+) (use c-x c-o)
+" PmenuExtra: Popup menu item extra info (added in Vim 9.1+) (use c-x c-o)
+" PmenuExtraSel: Popup menu item extra info selected (added in Vim 9.1+) (use c-x c-o)
 "
-" 11. Status Lines & Splits
+" 10. Status Lines & Splits
 "
 " StatusLine: Active status line of the current window (where info such as the
 "             filename, line/column number and percentage are displayed)
@@ -190,15 +194,15 @@ let g:colors_name = 'ddd_mocca'
 " StatusLineTermNC: Status line for inactive terminal buffer (:terminal)
 " WildMenu: Wildmenu/command-line tab completion (type :c and press Tab).
 "
-" 12. Tabs
+" 11. Tabs
 "
-" TabLine: Tabline at the top of the screen when using tabs. (:tabnew) (in Vim!)
+" TabLine: Tabline at the top of the screen when using tabs. (:tabnew) (works in Vim no GVim!)
 " TabLineSel: The currently active/selected tab in the tabline
 " TabLineFill: Fill area of the tabline (after the last tab label)
 " TabPanel: Tab panel sidebar (:set showtabpanel=1)
 " TabPanelFill: Fill area of the tab panel (:set showtabpanel=1)
 "
-" 13. Top Bar
+" 12. Top Bar
 "
 " TitleBar: Title bar of the GUI window (active)
 "           TitleBar is supported only in the MS-Windows GUI in Vim 9.1+
@@ -207,21 +211,61 @@ let g:colors_name = 'ddd_mocca'
 " ToolbarButton: The clickable buttons in the toolbar (:set guioptions+=T)
 " ToolbarLine: The background of the toolbar row (:set guioptions+=T)
 "------------------------------------------------------------------------------
+" 13. NeoVim only
+"
+" NormalNC:      Normal text in non-current windows (:sp and :vsp to see)
+" WinSeparator:  Separators between window, both vertical and horizontals (NeoVim uses this instead of VertSplit)
+" WinBar:        Window bar of current window (:set winbar=1)
+" WinBarNC:      Window bar of inactive windows (:set winbar=1)
+"
+" Substitute:    :substitute replacement text (do a search and replace like :%s/re/re/g)
+" FloatBorder:   Border of floating windows ( :lua vim.api.nvim_open_win(0,true,{relative="editor",width=40,height=10,row=5,col=10,border="rounded",title=" Hello ",footer=" Footer ",title_pos="center",footer_pos="center"}) )
+" FloatTitle:    Title of floating windows
+" FloatFooter:   Footer of floating windows
+"------------------------------------------------------------------------------
 
-" May be needed just in case something goes wrong
+" Set a default to background just in case something goes wrong.
 set background=light
 
 " NOTE: You can find a list of vim's colorschemes in $VIMRUNTIME/colors/
 " Vim default groups
 "------------------------------------------------------------------------------
-" NOTE: See ":help highlight-groups" for all the default highlighting groups.
+" NOTE: See ":help highlight-groups" for all the default highlight groups.
 " NOTE: You can see the current settings with the ":highlight" command.
 
+" NOTE: I override highlight groups syntax matching colors in my .vim/after/syntax/vim.vim file.
+" NOTE: I override my statusline in .vimrc to call SynStackGroup() that shows the syntax and highlight group names.
+
+"------------------------------------------------------------------------------
+" Highlight Attributes Reference
+"------------------------------------------------------------------------------
+" guifg:   Foreground color for GUI Vim (HEX #rrggbb or color name)
+" guibg:   Background color for GUI Vim (HEX #rrggbb or color name)
+" gui:     Font style for GUI Vim (NONE, bold, underline, reverse, italic, standout, strikethrough, undercurl, underdouble, underdotted, underdashed) -> gvim .vim/more_colors.vim
+" guisp:   Special color for GUI Vim (used for undercurl/underline color)
+" font:    Font to use in GUI Vim (NOT RECOMMENDED: only sets global font not font per highlight group, not supported in every Vim version, font size does not seem to be controllable in my Vim -> use "set guifont" instead)
+"          NOTE: use ":set guifont=(tab)" to cycle through the list of fonts.
+"
+" ctermfg: Foreground color for terminal Vim (color number 0-255 or name) (sometimes only 16 or 8 colors are available!)
+" ctermbg: Background color for terminal Vim (color number 0-255 or name)
+" cterm:   Font style for terminal Vim (NONE, bold, underline, reverse, italic, standout, strikethrough, undercurl, underdouble, underdotted, underdashed). NOTE: it's good habit to update both cterm and gui colors even if you only use the GUI with Vim just in case you need to use non GUI Vim, so I try to keep the colors in sync.
+" ctermul: Underline/undercurl color for terminals (equivalent to guisp for cterm) (Vim 9.0+)
+" NOTE: you can use "set termguicolors" to use gui instead of cterm for Vim if that option is available
+"
+" term:    Font style for b&w terminals (NONE, bold, underline, reverse, italic, standout, strikethrough)
+" termfg:  Foreground color for terminals
+" termbg:  Background color for terminals
+" start:   Terminal escape sequence to start highlight
+" stop:    Terminal escape sequence to stop highlight
+"
+" blend:   (NeoVim only) Transparency/blending value (0 fully opaque -> 100 fully transparent)
+"------------------------------------------------------------------------------
+
 hi Normal            cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=229  guibg=moccasin   guisp=NONE
-hi Ignore            cterm=NONE gui=NONE ctermfg=240  guifg=grey40      ctermbg=229  guibg=moccasin   guisp=NONE
-hi TitleBar          cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=229  guibg=moccasin   guisp=NONE
 hi EndOfBuffer       cterm=NONE gui=NONE ctermfg=233  guifg=grey5       ctermbg=228  guibg=khaki      guisp=NONE
 hi LineNr            cterm=bold gui=bold ctermfg=238  guifg=grey30      ctermbg=NONE guibg=NONE       guisp=NONE
+hi! link LineNrAbove       LineNr
+hi! link LineNrBelow       LineNr
 
 hi Statement         cterm=bold gui=bold ctermfg=129  guifg=purple1     ctermbg=NONE guibg=NONE       guisp=NONE
 hi Keyword           cterm=bold gui=bold ctermfg=129  guifg=purple1     ctermbg=NONE guibg=NONE       guisp=NONE
@@ -234,47 +278,83 @@ hi Conditional       cterm=bold gui=bold ctermfg=22   guifg=darkgreen   ctermbg=
 hi Repeat            cterm=bold gui=bold ctermfg=22   guifg=darkgreen   ctermbg=NONE guibg=NONE       guisp=NONE
 
 hi Constant          cterm=bold gui=bold ctermfg=33   guifg=dodgerblue  ctermbg=NONE guibg=NONE       guisp=NONE
-hi Float             cterm=bold gui=bold ctermfg=45   guifg=cyan3       ctermbg=NONE guibg=NONE       guisp=NONE
 hi Number            cterm=bold gui=bold ctermfg=45   guifg=cyan3       ctermbg=NONE guibg=NONE       guisp=NONE
+hi Float             cterm=bold gui=bold ctermfg=45   guifg=cyan3       ctermbg=NONE guibg=NONE       guisp=NONE
 hi Boolean           cterm=bold gui=bold ctermfg=45   guifg=cyan3       ctermbg=NONE guibg=NONE       guisp=NONE
-hi Debug             cterm=bold gui=bold ctermfg=30   guifg=teal        ctermbg=NONE guibg=NONE       guisp=NONE
 
-hi Special           cterm=bold gui=bold ctermfg=33   guifg=dodgerblue  ctermbg=NONE guibg=NONE       guisp=NONE
 hi SpecialChar       cterm=NONE gui=NONE ctermfg=129  guifg=purple1     ctermbg=NONE guibg=NONE       guisp=NONE
 hi Delimiter         cterm=bold gui=bold ctermfg=208  guifg=darkorange  ctermbg=NONE guibg=NONE       guisp=NONE
+hi SpecialKey        cterm=bold gui=bold ctermfg=20   guifg=blue        ctermbg=NONE guibg=NONE       guisp=NONE
+hi Special           cterm=bold gui=bold ctermfg=33   guifg=dodgerblue  ctermbg=NONE guibg=NONE       guisp=NONE
 
 hi Exception         cterm=NONE gui=NONE ctermfg=196  guifg=red2        ctermbg=NONE guibg=NONE       guisp=NONE
 hi NonText           cterm=bold gui=bold ctermfg=196  guifg=red2        ctermbg=NONE guibg=NONE       guisp=NONE
-hi Question          cterm=bold gui=bold ctermfg=205  guifg=hotpink     ctermbg=NONE guibg=NONE       guisp=NONE
 hi Comment           cterm=bold gui=bold ctermfg=17   guifg=navy        ctermbg=NONE guibg=NONE       guisp=NONE
 hi SpecialComment    cterm=NONE gui=NONE ctermfg=129  guifg=purple1     ctermbg=NONE guibg=NONE       guisp=NONE
+hi Debug             cterm=bold gui=bold ctermfg=30   guifg=teal        ctermbg=NONE guibg=NONE       guisp=NONE
 
 hi StorageClass      cterm=bold gui=bold ctermfg=178  guifg=orange      ctermbg=NONE guibg=NONE       guisp=NONE
 hi Function          cterm=bold gui=bold ctermfg=208  guifg=darkorange  ctermbg=NONE guibg=NONE       guisp=NONE
 hi Operator          cterm=bold gui=bold ctermfg=202  guifg=orangered   ctermbg=NONE guibg=NONE       guisp=NONE
+
 hi Macro             cterm=bold gui=bold ctermfg=166  guifg=darkorange3 ctermbg=NONE guibg=NONE       guisp=NONE
 hi Define            cterm=bold gui=bold ctermfg=166  guifg=darkorange3 ctermbg=NONE guibg=NONE       guisp=NONE
 hi PreCondit         cterm=bold gui=bold ctermfg=166  guifg=darkorange3 ctermbg=NONE guibg=NONE       guisp=NONE
 hi PreProc           cterm=bold gui=bold ctermfg=166  guifg=darkorange3 ctermbg=NONE guibg=NONE       guisp=NONE
 hi Include           cterm=bold gui=bold ctermfg=166  guifg=darkorange3 ctermbg=NONE guibg=NONE       guisp=NONE
+
 hi Typedef           cterm=bold gui=bold ctermfg=130  guifg=sienna      ctermbg=NONE guibg=NONE       guisp=NONE
 hi Structure         cterm=bold gui=bold ctermfg=130  guifg=sienna      ctermbg=NONE guibg=NONE       guisp=NONE
-hi Underlined        cterm=bold gui=bold ctermfg=100  guifg=olive       ctermbg=NONE guibg=NONE       guisp=NONE
-hi Tag               cterm=bold gui=bold ctermfg=101  guifg=khaki4      ctermbg=NONE guibg=NONE       guisp=NONE
+hi Underlined cterm=underline gui=underline ctermfg=100 guifg=olive     ctermbg=NONE guibg=NONE       guisp=NONE
+hi Tag               cterm=NONE gui=NONE ctermfg=101  guifg=khaki4      ctermbg=NONE guibg=NONE       guisp=NONE
 
-hi Cursor            cterm=bold gui=bold ctermfg=231  guifg=white       ctermbg=16   guibg=black      guisp=NONE
-hi CursorColumn      cterm=NONE gui=NONE ctermfg=NONE guifg=NONE        ctermbg=236  guibg=grey20     guisp=NONE
-hi CursorLine        cterm=NONE gui=NONE ctermfg=NONE guifg=NONE        ctermbg=236  guibg=grey20     guisp=NONE
-hi CursorLineNr      cterm=bold gui=bold ctermfg=130  guifg=sienna      ctermbg=NONE guibg=NONE       guisp=NONE
-hi ColorColumn       cterm=NONE gui=NONE ctermfg=238  guifg=grey30      ctermbg=234  guibg=grey10     guisp=NONE
+hi Todo              cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=214  guibg=orange     guisp=NONE
+hi Error             cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=196  guibg=red2       guisp=NONE
 
-hi StatusLine        cterm=bold gui=bold ctermfg=229  guifg=moccasin    ctermbg=16   guibg=black      guisp=NONE
-hi StatusLineNC      cterm=bold gui=bold ctermfg=101  guifg=khaki4      ctermbg=16   guibg=black      guisp=NONE
-hi VertSplit         cterm=bold gui=bold ctermfg=101  guifg=khaki4      ctermbg=16   guibg=black      guisp=NONE
+hi SpellBad        cterm=underline gui=undercurl ctermfg=196 guifg=NONE ctermbg=NONE guibg=NONE       guisp=red
+hi SpellCap        cterm=underline gui=undercurl ctermfg=20  guifg=NONE ctermbg=NONE guibg=NONE       guisp=blue
+hi SpellLocal      cterm=underline gui=undercurl ctermfg=30  guifg=NONE ctermbg=NONE guibg=NONE       guisp=darkcyan
+hi SpellRare       cterm=underline gui=undercurl ctermfg=201 guifg=NONE ctermbg=NONE guibg=NONE       guisp=magenta
+
+hi Ignore            cterm=NONE gui=NONE ctermfg=240  guifg=grey40      ctermbg=229  guibg=moccasin   guisp=NONE
+hi Conceal           cterm=NONE gui=NONE ctermfg=231  guifg=white       ctermbg=242  guibg=DarkGrey   guisp=NONE
+hi Directory         cterm=NONE gui=NONE ctermfg=100  guifg=olive       ctermbg=NONE guibg=NONE       guisp=NONE
+hi MatchParen        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=30   guibg=teal       guisp=NONE
+hi Visual            cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=101  guibg=khaki4     guisp=NONE
+hi VisualNOS cterm=bold,underline gui=bold,underline ctermfg=250 guifg=grey80 ctermbg=16  guibg=black guisp=NONE
 
 hi Search            cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=101  guibg=khaki4     guisp=NONE
 hi CurSearch         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=100  guibg=olive      guisp=NONE
 hi IncSearch         cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=100  guibg=olive      guisp=NONE
+hi! link QuickFixLine      CurSearch
+
+hi Title             cterm=bold gui=bold ctermfg=198  guifg=deeppink    ctermbg=NONE guibg=NONE       guisp=NONE
+hi MoreMsg           cterm=bold gui=bold ctermfg=203  guifg=tomato1     ctermbg=NONE guibg=NONE       guisp=NONE
+hi Question          cterm=bold gui=bold ctermfg=205  guifg=hotpink     ctermbg=NONE guibg=NONE       guisp=NONE
+hi ErrorMsg          cterm=bold gui=bold ctermfg=231  guifg=white       ctermbg=196  guibg=red2       guisp=NONE
+hi WarningMsg      cterm=underline gui=underline ctermfg=196 guifg=red2 ctermbg=NONE guibg=NONE       guisp=NONE
+hi! link ModeMsg           Normal
+hi! link MessageWindow     WarningMsg
+hi! link PopupNotification Exception
+
+hi DiffAdd           cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=48   guibg=lightgreen guisp=NONE
+hi DiffChange        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=81   guibg=skyblue    guisp=NONE
+hi DiffDelete        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=240  guibg=grey40     guisp=NONE
+hi DiffText          cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=33   guibg=dodgerblue guisp=NONE
+
+hi Folded            cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=240  guibg=grey40     guisp=NONE
+hi FoldColumn        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=248  guibg=grey70     guisp=NONE
+hi SignColumn        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=248  guibg=grey70     guisp=NONE
+
+hi Cursor            cterm=bold gui=bold ctermfg=231  guifg=white       ctermbg=16   guibg=black      guisp=NONE
+hi! link CursorIM          Cursor
+hi! link lCursor           todo
+hi ColorColumn       cterm=NONE gui=NONE ctermfg=238  guifg=grey30      ctermbg=234  guibg=grey10     guisp=NONE
+hi CursorColumn      cterm=NONE gui=NONE ctermfg=NONE guifg=NONE        ctermbg=236  guibg=grey20     guisp=NONE
+hi CursorLine        cterm=NONE gui=NONE ctermfg=NONE guifg=NONE        ctermbg=236  guibg=grey20     guisp=NONE
+hi CursorLineNr      cterm=bold gui=bold ctermfg=130  guifg=sienna      ctermbg=NONE guibg=NONE       guisp=NONE
+hi! link CursorLineFold    CursorLine
+hi! link CursorLineSign    CursorLine
 
 hi Pmenu             cterm=NONE gui=NONE ctermfg=17   guifg=navy        ctermbg=228  guibg=khaki      guisp=NONE
 hi PmenuSel          cterm=NONE gui=NONE ctermfg=17   guifg=navy        ctermbg=101  guibg=khaki4     guisp=NONE
@@ -282,47 +362,18 @@ hi PmenuSbar         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=
 hi PmenuThumb        cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=101  guibg=khaki3     guisp=NONE
 hi PmenuMatch    cterm=underline gui=underline ctermfg=17  guifg=navy   ctermbg=228  guibg=khaki      guisp=NONE
 hi PmenuMatchSel cterm=underline gui=underline ctermfg=17  guifg=navy   ctermbg=101  guibg=khaki4     guisp=NONE
+hi PmenuKind         cterm=NONE gui=NONE ctermfg=17   guifg=navy        ctermbg=228  guibg=khaki      guisp=NONE
+hi PmenuKindSel      cterm=NONE gui=NONE ctermfg=17   guifg=navy        ctermbg=101  guibg=khaki4     guisp=NONE
+hi PmenuExtra        cterm=NONE gui=NONE ctermfg=40   guifg=green3      ctermbg=228  guibg=khaki      guisp=NONE
+hi PmenuExtraSel     cterm=NONE gui=NONE ctermfg=40   guifg=green3      ctermbg=101  guibg=khaki4     guisp=NONE
 
-hi MatchParen        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=30   guibg=teal       guisp=NONE
-hi Todo              cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=214  guibg=orange     guisp=NONE
-hi Error             cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=196  guibg=red2       guisp=NONE
-hi ErrorMsg          cterm=bold gui=bold ctermfg=231  guifg=white       ctermbg=196  guibg=red2       guisp=NONE
-
-hi DiffAdd           cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=48   guibg=lightgreen guisp=NONE
-hi DiffChange        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=81   guibg=skyblue    guisp=NONE
-hi DiffDelete        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=240  guibg=grey40     guisp=NONE
-hi DiffText          cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=33   guibg=dodgerblue guisp=NONE
-
-hi Conceal           cterm=NONE gui=NONE ctermfg=231  guifg=white       ctermbg=242  guibg=DarkGrey   guisp=NONE
-hi Folded            cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=240  guibg=grey40     guisp=NONE
-hi FoldColumn        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=248  guibg=grey70     guisp=NONE
-hi SignColumn        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=248  guibg=grey70     guisp=NONE
-
-hi Directory         cterm=bold gui=bold ctermfg=100  guifg=olive       ctermbg=NONE guibg=NONE       guisp=NONE
-hi SpecialKey        cterm=bold gui=bold ctermfg=20   guifg=blue        ctermbg=NONE guibg=NONE       guisp=NONE
-hi Title             cterm=bold gui=bold ctermfg=198  guifg=deeppink    ctermbg=NONE guibg=NONE       guisp=NONE
-hi MoreMsg           cterm=bold gui=bold ctermfg=203  guifg=tomato1     ctermbg=NONE guibg=NONE       guisp=NONE
-
-hi Visual            cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=101  guibg=khaki4     guisp=NONE
-hi VisualNOS cterm=bold,underline gui=bold,underline ctermfg=250 guifg=grey80 ctermbg=16  guibg=black guisp=NONE
-
-hi WarningMsg        cterm=underline gui=underline ctermfg=196 guifg=red2 ctermbg=NONE guibg=NONE guisp=NONE
-hi SpellBad          cterm=underline gui=undercurl ctermfg=196 guifg=NONE ctermbg=NONE guibg=NONE guisp=red
-hi SpellCap          cterm=underline gui=undercurl ctermfg=20  guifg=NONE ctermbg=NONE guibg=NONE guisp=blue
-hi SpellLocal        cterm=underline gui=undercurl ctermfg=30  guifg=NONE ctermbg=NONE guibg=NONE guisp=darkcyan
-hi SpellRare         cterm=underline gui=undercurl ctermfg=201 guifg=NONE ctermbg=NONE guibg=NONE guisp=magenta
-"------------------------------------------------------------------------------
-hi! link TitleBarNC        Normal
-
-hi! link ToolbarButton     Normal
-hi! link ToolbarLine       Normal
-
-hi! link ModeMsg           Normal
+hi StatusLine        cterm=bold gui=bold ctermfg=229  guifg=moccasin    ctermbg=16   guibg=black      guisp=NONE
+hi StatusLineNC      cterm=bold gui=bold ctermfg=101  guifg=khaki4      ctermbg=16   guibg=black      guisp=NONE
+hi VertSplit         cterm=bold gui=bold ctermfg=101  guifg=khaki4      ctermbg=16   guibg=black      guisp=NONE
 hi! link Terminal          Normal
-hi! link StatusLineTerm    StatusLine
-hi! link StatusLineTermNC  StatusLineNC
-
-hi! link MessageWindow     WarningMsg
+hi StatusLineTerm    cterm=NONE gui=NONE ctermfg=40   guifg=green3      ctermbg=228  guibg=khaki      guisp=NONE
+hi StatusLineTermNC  cterm=NONE gui=NONE ctermfg=40   guifg=green3      ctermbg=101  guibg=khaki4     guisp=NONE
+hi! link WildMenu          Todo
 
 hi! link TabLine           StatusLineNC
 hi! link TabLineSel        StatusLine
@@ -330,18 +381,19 @@ hi! link TabLineFill       ColorColumn
 hi! link TabPanel          StatusLineNC
 hi! link TabPanelFill      EndOfBuffer
 
-hi! link LineNrAbove       LineNr
-hi! link LineNrBelow       LineNr
+hi TitleBar          cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=229  guibg=moccasin   guisp=NONE
+hi! link TitleBarNC        Normal
+hi! link ToolbarButton     Normal
+hi! link ToolbarLine       Normal
+"------------------------------------------------------------------------------
+hi NormalNC          cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=228  guibg=khaki      guisp=NONE
+hi WinSeparator      cterm=NONE gui=NONE ctermfg=40   guifg=green3      ctermbg=101  guibg=khaki4     guisp=NONE
+hi WinBar            cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=228  guibg=khaki      guisp=NONE
+hi WinBarNC          cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=101  guibg=khaki4     guisp=NONE
 
-hi! link PopupNotification Exception
-
-hi! link CursorLineFold    CursorLine
-hi! link CursorLineSign    CursorLine
-
-hi! link CursorIM          Cursor
-hi! link lCursor           Cursor
-
-hi! link WildMenu          Todo
-hi! link QuickFixLine      CurSearch
+hi Substitute        cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=228  guibg=khaki      guisp=NONE
+hi FloatBorder       cterm=NONE gui=NONE ctermfg=40   guifg=green3      ctermbg=101  guibg=khaki4     guisp=NONE
+hi FloatTitle        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=101  guibg=khaki4     guisp=NONE
+hi FloatFooter       cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=228  guibg=khaki      guisp=NONE
 "------------------------------------------------------------------------------
 

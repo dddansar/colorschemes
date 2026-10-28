@@ -323,7 +323,7 @@ hi MatchParen        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=
 hi Visual            cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=46   guibg=green1     guisp=NONE
 hi VisualNOS cterm=bold,underline gui=bold,underline ctermfg=250 guifg=grey80 ctermbg=16  guibg=black guisp=NONE
 
-hi Search            cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=238  guibg=grey30     guisp=NONE
+hi Search            cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=237  guibg=grey25     guisp=NONE
 hi CurSearch         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=246  guibg=grey60     guisp=NONE
 hi IncSearch         cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=246  guibg=grey60     guisp=NONE
 hi! link QuickFixLine      CurSearch

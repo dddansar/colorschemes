@@ -386,8 +386,8 @@ hi! link TitleBarNC        Normal
 hi! link ToolbarButton     Normal
 hi! link ToolbarLine       Normal
 "------------------------------------------------------------------------------
-hi NormalNC          cterm=NONE gui=NONE ctermfg=250  guifg=grey80      ctermbg=234  guibg=grey10     guisp=NONE
-hi WinSeparator      cterm=NONE gui=NONE ctermfg=46   guifg=green1      ctermbg=236  guibg=grey20     guisp=NONE
+hi NormalNC          cterm=NONE gui=NONE ctermfg=250  guifg=grey80      ctermbg=16   guibg=black      guisp=NONE
+hi WinSeparator      cterm=NONE gui=NONE ctermfg=231  guifg=white       ctermbg=236  guibg=grey20     guisp=NONE
 hi WinBar            cterm=bold gui=bold ctermfg=250  guifg=grey80      ctermbg=234  guibg=grey10     guisp=NONE
 hi WinBarNC          cterm=bold gui=bold ctermfg=250  guifg=grey80      ctermbg=236  guibg=grey20     guisp=NONE
 

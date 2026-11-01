@@ -33,17 +33,17 @@
 " SOFTWARE.
 "==============================================================================
 
-" Clear any previous highlight so that if you switch colorschemes mid-session, old highlight definitions from the previous colorscheme won't bleed through, causing inconsistent colors.
+" 1) Clear any previous highlight so that if you switch colorschemes mid-session, old highlight definitions from the previous colorscheme won't bleed through, causing inconsistent colors.
 hi clear
 
-" Set the colorscheme name, so that you can load the colorscheme.
+" 2) Set the colorscheme name, so that you can load the colorscheme.
 let g:colors_name = 'ddd_black'
 
 " NOTE: If you change the colors here, you change them in all files for all
 "       relevant groups.
 
 "------------------------------------------------------------------------------
-" List of Vim default highlight groups and what they match.
+" 21) List of Vim default highlight groups and what they match.
 "------------------------------------------------------------------------------
 "
 " 1. Default Display
@@ -224,33 +224,33 @@ let g:colors_name = 'ddd_black'
 " FloatFooter:   Footer of floating windows
 "------------------------------------------------------------------------------
 
-" Set a default to background just in case something goes wrong.
+" 3) Set a default to background just in case something goes wrong.
 set background=dark
 
-" NOTE: You can find a list of vim's colorschemes in $VIMRUNTIME/colors/
+" NOTE: 4) You can find a list of vim's colorschemes in $VIMRUNTIME/colors/
 " Vim default groups
 "------------------------------------------------------------------------------
-" NOTE: See ":help highlight-groups" for all the default highlight groups.
-" NOTE: You can see the current settings with the ":highlight" command.
+" NOTE: 5) See ":help highlight-groups" for all the default highlight groups.
+" NOTE: 6) You can see the current settings with the ":highlight" command.
 
-" NOTE: I override highlight groups syntax matching colors in my .vim/after/syntax/vim.vim file.
-" NOTE: I override my statusline in .vimrc to call SynStackGroup() that shows the syntax and highlight group names.
+" NOTE: 7) I override highlight groups syntax matching colors in my .vim/after/syntax/vim.vim file.
+" NOTE: 8) I override my statusline in .vimrc to call SynStackGroup() that shows the syntax and highlight group names.
 
 "------------------------------------------------------------------------------
-" Highlight Attributes Reference
+" 9) Highlight Attributes Reference
 "------------------------------------------------------------------------------
 " guifg:   Foreground color for GUI Vim (HEX #rrggbb or color name)
 " guibg:   Background color for GUI Vim (HEX #rrggbb or color name)
-" gui:     Font style for GUI Vim (NONE, bold, underline, reverse, italic, standout, strikethrough, undercurl, underdouble, underdotted, underdashed) -> gvim .vim/more_colors.vim
+" gui:     Font style for GUI Vim (NONE, bold, underline, reverse, italic, standout, strikethrough, undercurl, underdouble, underdotted, underdashed) -> 10) gvim .vim/more_colors.vim
 " guisp:   Special color for GUI Vim (used for undercurl/underline color)
-" font:    Font to use in GUI Vim (NOT RECOMMENDED: only sets global font not font per highlight group, not supported in every Vim version, font size does not seem to be controllable in my Vim -> use "set guifont" instead)
-"          NOTE: use ":set guifont=(tab)" to cycle through the list of fonts.
+" font:    Font to use in GUI Vim (NOT RECOMMENDED: only sets global font not font per highlight group, not supported in every Vim version, font size does not seem to be controllable in my Vim -> 11) use "set guifont" instead)
+"          NOTE: 12) use ":set guifont=(tab)" to cycle through the list of fonts.
 "
 " ctermfg: Foreground color for terminal Vim (color number 0-255 or name) (sometimes only 16 or 8 colors are available!)
 " ctermbg: Background color for terminal Vim (color number 0-255 or name)
 " cterm:   Font style for terminal Vim (NONE, bold, underline, reverse, italic, standout, strikethrough, undercurl, underdouble, underdotted, underdashed). NOTE: it's good habit to update both cterm and gui colors even if you only use the GUI with Vim just in case you need to use non GUI Vim, so I try to keep the colors in sync.
 " ctermul: Underline/undercurl color for terminals (equivalent to guisp for cterm) (Vim 9.0+)
-" NOTE: you can use "set termguicolors" to use gui instead of cterm for Vim if that option is available
+" NOTE: 13) you can use "set termguicolors" to use gui instead of cterm for Vim if that option is available
 "
 " term:    Font style for b&w terminals (NONE, bold, underline, reverse, italic, standout, strikethrough)
 " termfg:  Foreground color for terminals
@@ -267,8 +267,26 @@ hi LineNr            cterm=NONE gui=NONE ctermfg=238  guifg=grey30      ctermbg=
 hi! link LineNrAbove       LineNr
 hi! link LineNrBelow       LineNr
 
+" 14) color names may be different in different editors/OS
+" 15) Try to keep cterm colors in sync with gui colors.
+" hi Normal            cterm=NONE gui=NONE ctermfg=250  guifg=grey80      ctermbg=16   guibg=black      guisp=NONE font=Courier_New_Regular_15
+" 16) if you don't set NONE and keep it blank instead, it will reuse values/colors from the previously loaded colorscheme or the default colorscheme which gets loaded first by default before the colorscheme you loaded even if you did nto explicitly load the default colorscheme.
+" 17) The "!" in "hi!" means force/override - it clears any existing definition of that highlight group before applying the new one.
+
+" 18) When selecting colors, I use .vim/colors/all_colors.vim to help me pick colors.
+"     the all_colors.vim file needs to source itself, and I do that automatically in my vim.vim file
+" 19) To look up the hex of a specific highlight group use:
+" :echo synIDattr(synIDtrans(hlID("Comment")), "fg#")
+" 20) You can find a complete list of hex values for each color name in:
+" :sp $VIMRUNTIME/colors/lists/default.vim
+" or in
+" :sp $VIMRUNTIME/rgb.txt
+" or for NeoVim in:
+" https://github.com/neovim/neovim/blob/master/src/nvim/highlight_group.c
+
 hi Statement         cterm=bold gui=bold ctermfg=184  guifg=yellow      ctermbg=NONE guibg=NONE       guisp=NONE
 hi Keyword           cterm=bold gui=bold ctermfg=184  guifg=yellow      ctermbg=NONE guibg=NONE       guisp=NONE
+" hi Type              cterm=bold gui=bold ctermfg=46   guifg=green      ctermbg=NONE guibg=NONE       guisp=NONE
 hi Type              cterm=bold gui=bold ctermfg=46   guifg=green1      ctermbg=NONE guibg=NONE       guisp=NONE
 hi Identifier        cterm=NONE gui=NONE ctermfg=46   guifg=green1      ctermbg=NONE guibg=NONE       guisp=NONE
 hi Character         cterm=NONE gui=NONE ctermfg=34   guifg=green3      ctermbg=NONE guibg=NONE       guisp=NONE
@@ -386,8 +404,8 @@ hi! link TitleBarNC        Normal
 hi! link ToolbarButton     Normal
 hi! link ToolbarLine       Normal
 "------------------------------------------------------------------------------
-hi NormalNC          cterm=NONE gui=NONE ctermfg=250  guifg=grey80      ctermbg=234  guibg=grey10     guisp=NONE
-hi WinSeparator      cterm=NONE gui=NONE ctermfg=46   guifg=green1      ctermbg=236  guibg=grey20     guisp=NONE
+hi NormalNC          cterm=NONE gui=NONE ctermfg=250  guifg=grey80      ctermbg=233  guibg=grey5      guisp=NONE
+hi WinSeparator      cterm=NONE gui=NONE ctermfg=231  guifg=white       ctermbg=236  guibg=grey20     guisp=NONE
 hi WinBar            cterm=bold gui=bold ctermfg=250  guifg=grey80      ctermbg=240  guibg=grey40     guisp=NONE
 hi WinBarNC          cterm=bold gui=bold ctermfg=250  guifg=grey80      ctermbg=236  guibg=grey20     guisp=NONE
 

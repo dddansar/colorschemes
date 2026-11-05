@@ -341,9 +341,9 @@ hi MatchParen        cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=
 hi Visual            cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=46   guibg=green1     guisp=NONE
 hi VisualNOS cterm=bold,underline gui=bold,underline ctermfg=250 guifg=grey80 ctermbg=16  guibg=black guisp=NONE
 
-hi Search            cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=237  guibg=grey25     guisp=NONE
-hi CurSearch         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=242  guibg=fuchsia    guisp=NONE
-hi IncSearch         cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=242  guibg=fuchsia    guisp=NONE
+hi Search            cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=240  guibg=grey40     guisp=NONE
+hi CurSearch         cterm=NONE gui=NONE ctermfg=16   guifg=black       ctermbg=201  guibg=fuchsia    guisp=NONE
+hi IncSearch         cterm=bold gui=bold ctermfg=16   guifg=black       ctermbg=201  guibg=fuchsia    guisp=NONE
 hi! link QuickFixLine      CurSearch
 
 hi Title             cterm=bold gui=bold ctermfg=198  guifg=deeppink    ctermbg=NONE guibg=NONE       guisp=NONE

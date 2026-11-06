@@ -3,6 +3,9 @@ A list of Vim colorschemes that I made
 
 To use, add the colorschemes to .vim/colors/ for Vim or .config/nvim/colors/ for Neovim
 
+Alternatively you can also add the colorschemes to:
+.vim/pack/{some_folder}/start/ddd_colorschemes/colors/
+
 Then load the desired colorscheme with:
 
 For Vim:
